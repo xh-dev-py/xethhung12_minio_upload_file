@@ -28,14 +28,13 @@ steps:
   displayName: 'Install dependencies'
 
 - script: |
-    rm -fr ./dist
+    rm -fr dist/*
     python -m build
   displayName: 'Build the project'
 
 - script: |
-    twine upload dist/* -u __token__ -p $(token)
-  displayName: 'Upload'
-
+    python -m twine upload dist/* -u __token__ -p $(token)
+  displayName: 'Upload to pypi'
 
 #- script: |
 #    pip install pytest pytest-azurepipelines
