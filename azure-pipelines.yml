@@ -24,7 +24,7 @@ steps:
 
 - script: |
     rm -fr ./dist
-    build
+    python -m build
   displayName: 'Build the project'
 
 - script: |
