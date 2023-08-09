@@ -4,13 +4,18 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/python
 
 trigger:
-- master
-
+  branches:
+    include:
+      - master
+  paths:
+    exclude:
+      - README.md
 pool:
   vmImage: ubuntu-latest
 
 variables:
   - group: variables
+
 steps:
 - task: UsePythonVersion@0
   inputs:
