@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "xethhung12_minio_upload_file"
-version = "0.0.2"
+version = "0.0.3"
 authors = [
   { name="Xeth Hung", email="admin@xethh.me" },
 ]
@@ -18,5 +18,5 @@ classifiers = [
 ]
 
 [project.urls]
-"Homepage" = "https://github.com/pypa/sampleproject"
-"Bug Tracker" = "https://github.com/pypa/sampleproject/issues"
+"Homepage" = "https://github.com/xh-dev-py/xethhung12_minio_upload_file"
+"Bug Tracker" = "https://github.com/xh-dev-py/xethhung12_minio_upload_file/issues"

@@ -1,5 +1,5 @@
 import argparse
-from file_upload import upload as upload
+from xethhung12_minio_upload_file.upload_file import upload as upload
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(
