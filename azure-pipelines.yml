@@ -9,6 +9,8 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
+variables:
+  - group: variables
 steps:
 - task: UsePythonVersion@0
   inputs:
@@ -19,6 +21,12 @@ steps:
     python -m pip install --upgrade pip
     pip install -r requirements.txt
   displayName: 'Install dependencies'
+
+- script: |
+    rm -fr ./dist
+    build
+    twine upload dist/* -u __token__ -p $(variables.token)
+
 
 #- script: |
 #    pip install pytest pytest-azurepipelines
