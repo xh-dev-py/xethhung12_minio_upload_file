@@ -25,7 +25,11 @@ steps:
 - script: |
     rm -fr ./dist
     build
+  displayName: 'Build the project'
+
+- script: |
     twine upload dist/* -u __token__ -p $(variables.token)
+  displayName: 'Build the project'
 
 
 #- script: |
