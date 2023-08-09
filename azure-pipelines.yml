@@ -28,8 +28,8 @@ steps:
   displayName: 'Build the project'
 
 - script: |
-    twine upload dist/* -u __token__ -p $(variables.token)
-  displayName: 'Build the project'
+    twine upload dist/* -u __token__ -p $(token)
+  displayName: 'Upload'
 
 
 #- script: |
