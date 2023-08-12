@@ -1,8 +1,3 @@
-***
-~~[xethhung12_minio_upload_file]~~ has moved to [[xethhung12_minio]](https://github.com/xh-dev/xethhung12_minio).\
-This repo no longer maintained.
----
-
 
 # Build
 ```shell
