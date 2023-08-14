@@ -15,6 +15,7 @@ pool:
 
 variables:
   - group: upload-variables
+  - group: xethhung12_tg_msg
 
 steps:
 - task: UsePythonVersion@0
@@ -26,6 +27,12 @@ steps:
     python -m pip install --upgrade pip
     pip install -r requirements.txt
   displayName: 'Install dependencies'
+- script: | 
+    python -m xethhung12_tg_msg --silent \
+      --receiver-id $(RECEIVER_ID) \
+      --bot-token $(BOT_TOKEN) \
+      --msg "build xethhung12_minio_upload_file start"
+  displayName: 'Build notification detail'
 
 - script: |
     rm -fr dist/*
@@ -35,6 +42,13 @@ steps:
 - script: |
     python -m twine upload dist/* -u __token__ -p $(token)
   displayName: 'Upload to pypi'
+
+- script: |
+    python -m xethhung12_tg_msg --silent \
+      --receiver-id $(RECEIVER_ID) \
+      --bot-token $(BOT_TOKEN) \
+      --msg "build xethhung12_minio_upload_file done"
+  displayName: 'Build notification detail'
 
 #- script: |
 #    pip install pytest pytest-azurepipelines
