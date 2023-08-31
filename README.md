@@ -1,3 +1,7 @@
+# Install
+```shell
+pip install xethhung12_minio_upload_file 
+```
 
 # Build
 ```shell
